@@ -1,0 +1,92 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.buttons {
+  display: flex;
+  margin:4rem 0;
+}
+
+.buttons > button {
+  background-color: #36393F;
+  border: none;
+  outline: none;
+  border-radius: .3rem;
+  min-width: 8rem;
+  min-height: 2.5rem;
+  color: #EBEFF2;
+  cursor: pointer;
+  padding: .5rem 1.5rem;
+  font-size: 1rem;
+  margin: 0 .2rem;
+}
+
+button:hover {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, .3);
+}
+
+button:active {
+  transform: translateY(.1rem);
+}
+
+button.activeLoading,
+button.activePositive,
+button.activeNegative {
+  min-width: 0 !important;
+  width: 3.2rem !important;
+  height: 3.2rem !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.activeLoading {
+  border: .15rem solid #9CAEC6 !important;
+  background-color: transparent !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  animation: rotate .7s linear infinite;
+  animation-delay: .2s;
+}
+
+.activePositive, .activeNegative {
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: none !important;
+  opacity: 0;
+  animation: fade 1s ease forwards;
+}
+
+.activePositive {
+  background-image: url('./Assets/check.png');
+  background-size: 60%;
+  background-color: #1BC900 !important;
+  border-radius: 0 !important;
+}
+
+.activeNegative {
+  background-image: url('./Assets/fail.png');
+  background-size: 70%;
+  background-color: #AC0101 !important;
+  border-radius: 0 !important;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade {
+  to {
+    opacity: initial;
+  }
+}
+
